@@ -1,8 +1,12 @@
 function removeDuplicates(array) {
-    const uniqueSet = new Set(array);
-    return Array.from(uniqueSet);
+    const uniqueArray = []; 
+
+    for (let i = 0; i < array.length; i++) {
+        if (!uniqueArray.includes(array[i])) {
+            uniqueArray.push(array[i]); 
+        }
+    }
+
+    return uniqueArray; 
 }
-//_______________________________________________________________
-const items = ["apple", "banana", "apple", "orange", "banana"];
-const uniqueItems = removeDuplicates(items);
-console.log(uniqueItems);["apple", "banana", "orange"]
+
