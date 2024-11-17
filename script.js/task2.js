@@ -1,9 +1,11 @@
 function calculateSumAndAverage(numbers) {
-    const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-    const average = sum / numbers.length;
-    return { sum, average };
+    let sum = 0; 
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i]; 
+    }
+
+    let average = sum / numbers.length; 
+    return { sum: sum, average: average }; 
 }
-//________________________________________________________________
-const numbers = [10, 20, 30, 40];
-const result = calculateSumAndAverage(numbers);
-console.log(result); 
+
+
