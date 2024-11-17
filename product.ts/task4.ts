@@ -4,14 +4,11 @@ interface Product {
 }
 
 function calculateTotalPrice(products: Product[]): number {
-    return products.reduce((total, product) => total + product.price, 0);
+    let total = 0; 
+    for (let i = 0; i < products.length; i++) {
+        total += products[i].price; 
+    }
+    return total; 
 }
-//____________________________________________________________
-const products: Product[] = [
-    { name: "Apple", price: 10 },
-    { name: "Banana", price: 5 },
-    { name: "Orange", price: 7 }
-];
 
-const totalPrice = calculateTotalPrice(products);
-console.log(totalPrice); // 22
+
